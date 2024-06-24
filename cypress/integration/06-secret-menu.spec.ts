@@ -73,7 +73,7 @@ describe('Secret Menu Items', () => {
       it.only(`should only display items with a rating of ${rating} or higher`, () => {
         cy.get('@ratingFilter').invoke('val', rating).trigger('change');
         cy.get('td.popularity').each(($el) => {
-          expect($el.text()).to.be.gte(rating);
+          expect(+$el.text()).to.be.gte(rating);
         });
       });
     }
