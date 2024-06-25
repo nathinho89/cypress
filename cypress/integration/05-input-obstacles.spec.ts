@@ -37,7 +37,7 @@ describe('Input obstacles', () => {
     cy.get('[data-test="color-result"]').contains('#ffee00');
   });
 
-  it.only('should find and control a date input', () => {
+  it('should find and control a date input', () => {
     cy.get('[data-test="date-input"]').invoke('val', '2024-01-30').trigger('input');
     cy.get('[data-test="date-result"]').contains('2024-01-30');
   });
